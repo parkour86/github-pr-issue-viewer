@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>GitHub PR & Issue Viewer</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>GitHub PR & Issue Viewer</h1>
+            <div class="controls">
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter GitHub username"
+                />
+                <button id="showPrsBtn">Show PRs</button>
+            </div>
+            <ul class="pr-list" id="prList"></ul>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>
