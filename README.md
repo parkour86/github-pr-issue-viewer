@@ -4,16 +4,16 @@ A simple web app to view and filter GitHub pull requests and issues by user, wit
 
 ## Features
 
-- **View Pull Requests and Issues:**  
+- **View Pull Requests and Issues:**
   Enter any GitHub username to see their recent pull requests and issues across all repositories.
 
-- **Tabbed Navigation:**  
+- **Tabbed Navigation:**
   Switch easily between Pull Requests and Issues.
 
-- **Status Filtering:**  
+- **Status Filtering:**
   Filter by Open, Closed, and (for PRs) Merged status.
 
-- **Responsive UI:**  
+- **Responsive UI:**
   Clean, modern interface built with HTML, CSS, and jQuery.
 
 ## Usage
@@ -22,13 +22,13 @@ A simple web app to view and filter GitHub pull requests and issues by user, wit
 
 2. **Open `index.html` in your browser**
 
-3. **Enter a GitHub username** in the input box and click "Show PRs"  
+3. **Enter a GitHub username** in the input box and click "Show PRs"
    - Use the tabs to switch between Pull Requests and Issues.
    - Use the filter buttons to show/hide items by status.
 
 ## Screenshot
 
-<img src="screenshot.png" alt="App Screenshot" width="600" />
+<img src="screenshot/Screenshot.png" alt="Example" width="50%">
 
 
 ## How It Works
