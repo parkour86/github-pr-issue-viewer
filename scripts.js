@@ -147,7 +147,7 @@ $(document).ready(function () {
         });
         listHtml += `<li class="${item.statusClass}">
           <a href="${item.html_url}" target="_blank">${item.title}</a>
-          <div class="repo">${item.repo}</div>
+          <div class="repo">${item.repo.length > 50 ? item.repo.slice(0, 50) + "..." : item.repo}</div>
           <div class="status"><strong>Status:</strong> ${item.status}</div>
           <div class="created" title="Created Date">${dateStr}</div>
         </li>`;
