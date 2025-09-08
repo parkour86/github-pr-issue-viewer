@@ -18,6 +18,13 @@ h1 {
     color: #7db4ff;
 }
 
+.version {
+    text-align: center;
+    margin-top: 18px;
+    color: #888;
+    font-size: 12px;
+}
+
 input,
 button {
     padding: 8px;
