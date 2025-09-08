@@ -3,6 +3,59 @@ $(document).ready(function () {
   let allIssues = [];
   let activeTab = "pr"; // "pr" or "issue"
 
+  // --- THEME TOGGLE LOGIC START ---
+  function setTheme(theme) {
+    // Remove existing theme stylesheet(s)
+    $("link[rel=stylesheet]").each(function () {
+      const href = $(this).attr("href");
+      if (
+        href &&
+        (href.includes("styles_dark.css") || href.includes("styles_light.css"))
+      ) {
+        $(this).remove();
+      }
+    });
+    // Add the new theme stylesheet
+    const themeHref =
+      theme === "light" ? "styles_light.css" : "styles_dark.css";
+    $("<link>", {
+      rel: "stylesheet",
+      href: themeHref,
+    }).appendTo("head");
+    // Save preference
+    localStorage.setItem("theme", theme);
+    // Optionally update icon
+    updateThemeIcon(theme);
+  }
+
+  function updateThemeIcon(theme) {
+    const $icon = $("#themeToggleIcon");
+    if (theme === "light") {
+      // Sun icon (yellow fill, dark stroke)
+      $icon.find("circle").attr("fill", "#FFD700");
+      $icon.attr("stroke", "#24292e");
+    } else {
+      // Moon icon (dark fill, light stroke)
+      $icon.find("circle").attr("fill", "#22272d");
+      $icon.attr("stroke", "#e3e8ef");
+    }
+  }
+
+  function getPreferredTheme() {
+    // Check localStorage, fallback to dark
+    return localStorage.getItem("theme") || "dark";
+  }
+
+  // On load, set theme
+  setTheme(getPreferredTheme());
+
+  $("#themeToggleBtn").on("click", function () {
+    const currentTheme = localStorage.getItem("theme") || "dark";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+  });
+  // --- THEME TOGGLE LOGIC END ---
+
   // Keep filter states locally
   let filterStates = {
     Open: true,
