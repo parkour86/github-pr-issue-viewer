@@ -32,7 +32,7 @@ A simple web app to view and filter GitHub pull requests and issues by user, wit
 
 ## Screenshot
 
-<img src="public/Screenshot_light.png" alt="Example" width="50%"><img src="public/Screenshot_dark.png" alt="Example" width="50%">
+<img src="public/Screenshot_light.png" alt="Example" width="49%"> <img src="public/Screenshot_dark.png" alt="Example" width="50%">
 
 ## How It Works
 
