@@ -4,20 +4,17 @@ $(document).ready(function () {
   let activeTab = "pr"; // "pr" or "issue"
 
   // --- THEME TOGGLE LOGIC START ---
+  /* prettier-ignore */
   function setTheme(theme) {
     // Remove existing theme stylesheet(s)
     $("link[rel=stylesheet]").each(function () {
       const href = $(this).attr("href");
-      if (
-        href &&
-        (href.includes("styles_dark.css") || href.includes("styles_light.css"))
-      ) {
+      if (href && (href.includes("styles_dark.css") || href.includes("styles_light.css"))) {
         $(this).remove();
       }
     });
     // Add the new theme stylesheet
-    const themeHref =
-      theme === "light" ? "styles_light.css" : "styles_dark.css";
+    const themeHref = theme === "light" ? "styles_light.css" : "styles_dark.css";
     $("<link>", {
       rel: "stylesheet",
       href: themeHref,
