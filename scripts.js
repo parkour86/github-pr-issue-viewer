@@ -64,6 +64,10 @@ $(document).ready(function () {
     const username = $("#username").val().trim();
     const $prList = $("#prList");
     const $showPrsBtn = $("#showPrsBtn");
+    // Store last searched username
+    if (username) {
+      localStorage.setItem("lastUsername", username);
+    }
 
     $prList.html("<li>Loading...</li>");
     allPRs = [];
@@ -226,6 +230,12 @@ $(document).ready(function () {
 
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  // Autofill #username from localStorage if available
+  const lastUsername = localStorage.getItem("lastUsername");
+  if (lastUsername) {
+    $("#username").val(lastUsername);
   }
 
   $("#showPrsBtn").on("click", fetchPRs);
