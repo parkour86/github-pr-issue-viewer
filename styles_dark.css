@@ -24,7 +24,6 @@ button {
     font-size: 16px;
     border: 1px solid #353b45;
     border-radius: 8px;
-    color: #e3e8ef;
     box-sizing: border-box;
     outline: none;
 }
@@ -68,16 +67,20 @@ button {
     cursor: pointer;
 }
 
-#showPrsBtn {
-    background: #3e4752;
-    color: #e3e8ef;
+#username {
+    padding-top: 10px;
+    padding-bottom: 11px;
+    text-align: center;
+    color: gray;
+    -webkit-text-fill-color: gray !important;
 }
 
-#username,
 #showPrsBtn {
     padding-top: 10px;
     padding-bottom: 11px;
     text-align: center;
+    background: #3e4752;
+    color: #e3e8ef;
 }
 
 .tab-bar .tab-btn.active {
