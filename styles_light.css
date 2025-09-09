@@ -4,17 +4,12 @@ body {
     margin: 0;
     padding: 0;
 }
-.container {
-    max-width: 630px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-}
-h1 {
-    text-align: center;
-    color: #24292e;
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
 }
 
 .version {
@@ -34,11 +29,43 @@ button {
     outline: none;
 }
 
-.controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    height: 40px;
+.container {
+    max-width: 630px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+h1 {
+    text-align: center;
+    color: #24292e;
+}
+
+#themeToggleBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    color: #24292e;
+}
+
+.container {
+    max-width: 630px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    padding: 24px;
+    position: relative;
 }
 
 .tab-bar {

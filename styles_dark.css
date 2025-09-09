@@ -5,17 +5,12 @@ body {
     padding: 0;
     color: #e3e8ef;
 }
-.container {
-    max-width: 630px;
-    margin: 40px auto;
-    background: #23272e;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-    padding: 24px;
-}
-h1 {
-    text-align: center;
-    color: #7db4ff;
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
 }
 
 .version {
@@ -35,11 +30,30 @@ button {
     outline: none;
 }
 
-.controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    height: 40px;
+#themeToggleBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    color: #7db4ff;
+}
+
+.container {
+    max-width: 630px;
+    margin: 40px auto;
+    background: #23272e;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    padding: 24px;
+    position: relative;
 }
 
 .tab-bar {
