@@ -36,10 +36,7 @@ button {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 24px;
-}
-h1 {
-    text-align: center;
-    color: #24292e;
+    position: relative;
 }
 
 #themeToggleBtn {
@@ -56,16 +53,6 @@ h1 {
     text-align: center;
     width: 100%;
     color: #24292e;
-}
-
-.container {
-    max-width: 630px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-    padding: 24px;
-    position: relative;
 }
 
 .tab-bar {
@@ -86,6 +73,7 @@ h1 {
     border-bottom: 3px inset;
     min-height: 45px;
     flex: 1 1 0;
+    background: #f6f8fa;
 }
 
 .filter-bar {
@@ -98,11 +86,17 @@ h1 {
     cursor: pointer;
 }
 
-#username,
+#username {
+    padding-top: 10px;
+    padding-bottom: 11px;
+    text-align: center;
+}
+
 #showPrsBtn {
     padding-top: 10px;
     padding-bottom: 11px;
     text-align: center;
+    background: #f6f8fa;
 }
 
 .tab-bar .tab-btn.active {
@@ -118,6 +112,10 @@ h1 {
     border-color: #2563eb;
 }
 
+.filter-btn:not(.selected) {
+    border-color: #d3dae4;
+}
+
 .filter-btn.selected,
 .filter-btn:active {
     background: #2563eb;
@@ -129,7 +127,7 @@ h1 {
     align-items: center;
     border: 1px solid #d1d5da;
     border-radius: 8px;
-    padding: 2px 8px 2px 10px;
+    padding: 2px 4px 2px 10px;
     box-shadow: 0 1px 2px rgba(37, 99, 235, 0.04);
     gap: 0;
 }
@@ -169,7 +167,7 @@ h1 {
 .pr-list li {
     background: #f1f8ff;
     margin: 8px 0;
-    padding: 12px;
+    padding: 14px;
     border-radius: 4px;
     border-left: 4px solid #0366d6;
     transition: border-color 0.2s;
@@ -188,6 +186,8 @@ h1 {
     color: #0366d6;
     text-decoration: none;
     font-weight: bold;
+    width: 95%;
+    display: block;
 }
 .pr-list .repo {
     color: #586069;
@@ -201,8 +201,27 @@ h1 {
 .pr-list .created {
     position: absolute;
     right: 12px;
-    bottom: 8px;
+    bottom: 14px;
     font-size: 13px;
     color: #555;
     margin-top: 0;
+}
+
+.commentCountContainer {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #586069;
+    position: absolute;
+    right: 13px;
+    top: 15px;
+}
+.commentCountContainer .octicon-comment {
+    color: #0366d6;
+    margin-right: 4px;
+}
+.commentCountContainer .ml-1 {
+    /*display: inline-block;*/
+    width: 2ch; /* For up to 2 digits, or use 3ch for up to 3 digits */
+    text-align: right; /* Or right, depending on your preference */
 }
