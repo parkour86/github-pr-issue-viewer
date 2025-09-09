@@ -250,4 +250,7 @@ $(document).ready(function () {
   $("#username").on("keydown", (e) => {
     if (e.key === "Enter") fetchPRs();
   });
+  $("#username").on("focus", function () {
+    $(this).select();
+  });
 });
