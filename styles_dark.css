@@ -173,7 +173,6 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    background: #23272e;
     margin: 10px 0;
     padding: 16px 16px 12px 16px;
     border-radius: 6px;
@@ -184,12 +183,15 @@ h1 {
 }
 .pr-list-item.status-open {
     border-left-color: #2da44e;
+    background: #2c333b;
 }
 .pr-list-item.status-closed {
     border-left-color: #cf222e;
+    background: #292e36;
 }
 .pr-list-item.status-merged {
     border-left-color: #8250df;
+    background: #2b3038;
 }
 
 .pr-list-header {
@@ -277,7 +279,7 @@ h1 {
     right: 10px;
     font-size: 12px;
     color: #8b949e;
-    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .commentCountContainer {
