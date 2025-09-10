@@ -12,11 +12,25 @@ body {
     height: 40px;
 }
 
-.version {
-    text-align: center;
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     margin-top: 18px;
-    color: #888;
+    color: #586069;
     font-size: 12px;
+    padding-top: 25px;
+    border-top: 1px solid #d1d5da;
+}
+
+.version-text {
+    flex: 1;
+    text-align: center;
+}
+
+#logo-dark {
+    display: none;
 }
 
 input,

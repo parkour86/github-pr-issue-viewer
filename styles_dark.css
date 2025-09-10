@@ -13,11 +13,25 @@ body {
     height: 40px;
 }
 
-.version {
-    text-align: center;
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     margin-top: 18px;
     color: #888;
     font-size: 12px;
+    padding-top: 25px;
+    border-top: 1px solid #353b45;
+}
+
+.version-text {
+    flex: 1;
+    text-align: center;
+}
+
+#logo-light {
+    display: none;
 }
 
 input,
