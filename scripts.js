@@ -97,7 +97,7 @@ $(document).ready(function () {
     }
 
     for (const item of data.items) {
-      const repo = item.repository_url.split("/").slice(-2).join("/");
+      const repo = item.repository_url.split("/").slice(-2).join(" / ");
       let status,
         statusClass = "";
 
@@ -201,17 +201,26 @@ $(document).ready(function () {
           minute: "2-digit",
         });
         /* prettier-ignore */
-        listHtml += `<li class="${item.statusClass}">
-          <a href="${item.html_url}" target="_blank">${item.title}</a>
-          <div class="repo">${item.repo.length > 50 ? item.repo.slice(0, 50) + "..." : item.repo}</div>
-          <div class="status"><strong>Status:</strong> ${item.status}</div>
-          ${item.comments !== undefined && item.comments > 0 ? `
-            <div class="commentCountContainer" title="Comments">
-              <svg aria-hidden="true" focusable="false" class="octicon octicon-comment" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 13.25 12H9.06l-2.573 2.573A1.458 1.458 0 0 1 4 13.543V12H2.75A1.75 1.75 0 0 1 1 10.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h4.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>
-              <span class="ml-1">${item.comments}</span>
-            </div>
-          ` : ''}
-          <div class="created" title="Created Date">${dateStr}</div>
+        listHtml += `<li class="pr-list-item ${item.statusClass}">
+          <div class="pr-list-header">
+            <span class="repo" title="${item.repo}">${item.repo.length > 50 ? item.repo.slice(0, 50) + "..." : item.repo}</span>
+            <span class="pr-list-header-right">
+              ${item.comments !== undefined && item.comments > 0 ? `
+                <span class="commentCountContainer" title="Comments">
+                  <svg aria-hidden="true" focusable="false" class="octicon octicon-comment" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 13.25 12H9.06l-2.573 2.573A1.458 1.458 0 0 1 4 13.543V12H2.75A1.75 1.75 0 0 1 1 10.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h4.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>
+                  <span class="ml-1">${item.comments}</span>
+                </span>
+              ` : ''}
+              <span class="status-badge ${item.statusClass}">${item.status}</span>
+            </span>
+          </div>
+          <div class="pr-list-title-row">
+            <a class="pr-title" href="${item.html_url}" target="_blank">${item.title}</a>
+          </div>
+
+          <div class="pr-list-footer">
+            <span class="created" title="Created Date">${dateStr}</span>
+          </div>
         </li>`;
       });
     }
