@@ -118,6 +118,7 @@ $(document).ready(function () {
           repo,
           status,
           statusClass,
+          comments: item.comments,
           created_at: item.created_at,
         });
       } else {
