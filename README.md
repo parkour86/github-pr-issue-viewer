@@ -20,16 +20,6 @@ A simple web app to view and filter GitHub pull requests and issues by user, wit
 - **Responsive UI:**
   Clean, modern interface built with HTML, CSS, and jQuery.
 
-## Usage
-
-1. **Clone or Download this Repository**
-
-2. **Open `index.html` in your browser**
-
-3. **Enter a GitHub username** in the input box and click "Show PRs"
-   - Use the tabs to switch between Pull Requests and Issues.
-   - Use the filter buttons to show/hide items by status.
-
 ## Screenshot
 
 <img src="public/Screenshot_light.png" alt="Example" width="49%"> <img src="public/Screenshot_dark.png" alt="Example" width="50%">
@@ -47,8 +37,46 @@ A simple web app to view and filter GitHub pull requests and issues by user, wit
 
 ## Customization
 
-- All styling is in `styles.css`
+- All styling is in `styles_dark.css` and `styles_light.css`
 - Main logic is in `scripts.js`
+
+## Usage
+
+### Option 1: Run Locally in Your Browser
+
+1. **Clone or Download this Repository**
+
+2. **Open `index.html` in your browser**
+
+3. **Enter a GitHub username** in the input box and click "Show PRs"
+   - Use the tabs to switch between Pull Requests and Issues.
+   - Use the filter buttons to show/hide items by status.
+
+### Option 2: Run with Docker
+
+#### Build the Docker Image
+
+If you want to build the Docker image yourself:
+
+```sh
+docker build -t github-pr-issue-viewer:latest .
+```
+
+#### Run with Docker Compose
+
+A `docker-compose.yml` file is provided for easy setup. To run the app:
+
+```sh
+docker-compose up -d
+```
+
+This will start the app and map port 4000 on your host to port 80 in the container. You can then access the app at [http://localhost:4000](http://localhost:4000).
+
+To stop and remove the container:
+
+```sh
+docker-compose down
+```
 
 ## License
 
