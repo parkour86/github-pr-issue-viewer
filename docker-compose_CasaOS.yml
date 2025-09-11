@@ -1,0 +1,52 @@
+# This docker-compose file is specifically configured for CasaOS.
+
+# Name of the GitHub PR & Issue Viewer application
+name: github-pr-issue-viewer
+# Service definitions for the GitHub PR & Issue Viewer application
+services:
+  # Service name: github-pr-issue-viewer
+  # The `github-pr-issue-viewer` service definition
+  github-pr-issue-viewer:
+    # Image to be used for the container
+    image: parkour86/github-pr-issue-viewer:1.0
+    container_name: github-pr-issue-viewer
+    # Ports mapping between host and container
+    ports:
+      - "4000:80"
+    # Container restart policy
+    restart: unless-stopped
+
+    # CasaOS specific service-level configuration
+    x-casaos:
+      ports:
+        - container: "4000"
+          description:
+            en_us: "Container Port: 4000 (web interface)"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: github-pr-issue-viewer
+  # Tagline for the application
+  tagline:
+    en_us: View and filter GitHub pull requests and issues by a user
+  # Developer's name or identifier
+  developer: "parkour86"
+  # Author of this configuration
+  author: parkour86
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/parkour86/github-pr-issue-viewer@c1746125bfcbdb9ca0ce0838520575e74e30e5f8/icon.png
+  # Port mapping information
+  port_map: "4000"
+  # Scheme used by the application
+  scheme: http
+  description:
+    # Description in English
+    en_us: A self-hosted web app to view and filter GitHub pull requests and issues for a user, with tabbed navigation and status filters.
+  title:
+    # Title in English
+    en_us: Github PR and Issue Viewer

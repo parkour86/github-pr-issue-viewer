@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  github-pr-issue-viewer:
+    image: parkour86/github-pr-issue-viewer:1.0
+    container_name: github-pr-issue-viewer
+    ports:
+      - "4000:80"
+    restart: unless-stopped
